@@ -9,6 +9,7 @@
 - http://docs.fluentd.org/v0.12/articles/docker-logging-efk-compose
 - https://geowarin.github.io/spring-boot-logs-in-elastic-search.html
   - github: https://github.com/geowarin/fluentd-boot
+- https://github.com/uken/fluent-plugin-elasticsearch
 
 ## ELK Stack (Elasticsearch, Logstash, Kibana)
 
