@@ -1,25 +1,28 @@
-es:
-  image: elasticsearch
-  ports:
-    - 9200:9200
-    - 9300:9300
+# https://docs.docker.com/compose/compose-file/
+version: '3'
+services:
+  es:
+    image: elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300
 
-kibana:
-  image: kibana
-  ports:
-    - 5601:5601
-  links:
-    - es:elasticsearch
+  kibana:
+    image: kibana
+    ports:
+      - 5601:5601
+    links:
+      - es:elasticsearch
 
-fluentd:
-  image: tinhtun/fluentd-elasticsearch
-  ports:
-    - 24224:24224
-    - 24224:24224/udp
-  volumes:
-    - ./fluentd:/fluentd/etc
-  environment:
-    - ELASTICSEARCH_HOST=es
-    - FLUENTD_CONF=fluent.conf 
-  links:
-    - es:es
+  fluentd:
+    image: tinhtun/fluentd-elasticsearch
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+    volumes:
+      - ./fluentd:/fluentd/etc
+    environment:
+      - ELASTICSEARCH_HOST=es
+      - FLUENTD_CONF=fluent.conf 
+    links:
+      - es:es
