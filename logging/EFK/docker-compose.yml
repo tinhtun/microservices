@@ -20,7 +20,7 @@ services:
       - 24224:24224
       - 24224:24224/udp
     volumes:
-      - ./fluentd:/fluentd/etc
+      - ./fluentd:/fluentd/etc # for RHEL, use ./fluentd:/fluentd/etc:z
     environment:
       - ELASTICSEARCH_HOST=es
       - FLUENTD_CONF=fluent.conf 
