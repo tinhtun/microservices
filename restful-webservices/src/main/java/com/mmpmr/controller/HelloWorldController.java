@@ -11,7 +11,7 @@ public class HelloWorldController {
 	public String helloWorld() {
 		return "Hello World";
 	}
-	
+
 	@GetMapping(path = "/hello/{name}")
 	public String helloWithPathVar(@PathVariable String name) {
 		return String.format("Hello, %s", name);
