@@ -1,0 +1,9 @@
+logging:
+  level:
+    org.springframework: info
+    com.mmpmr: debug
+
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
